@@ -1,9 +1,8 @@
 # Named Entity Recognition in Tweets: An Experimental Study
 
-You can use the [editor on GitHub](https://github.com/bhargav265/NLP/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Tweets are generally noisy and informal and hence the standard NLP mtools is severely degraded on these tweets. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
+This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chinking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER
 ## Introduction
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
