@@ -1,6 +1,6 @@
 # Named Entity Recognition in Tweets: An Experimental Study
 
-Tweets are generally noisy and informal and hence the standard NLP mtools is severely degraded on these tweets. 
+Tweets are generally noisy and informal and hence the standard NLP tools is severely degraded on these tweets. 
 
 This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chinking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER system. 
 ## Introduction
@@ -8,6 +8,16 @@ In many social media sites such as Facebook and Twitter, the language used is pr
 
 - Tweets contain plethora of disticntive named entity types
 - Due to twitter's 140 character limit, the tweets lack sufficient contest to determine the entity type.
+
+To address these problems, the following contributions were made. 
+
+1. By utilizing in-domain, outof-domain, and unlabeled data, it was able to substantially boost performance.
+2. LabeledLDA is applied, utilizing constraints based on an open-domain database (Freebase) as a source of supervision.
+
+## Shallow Syntax in Tweets
+
+
+
 
 ```markdown
 Syntax highlighted code block
