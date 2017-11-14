@@ -2,10 +2,12 @@
 
 Tweets are generally noisy and informal and hence the standard NLP mtools is severely degraded on these tweets. 
 
-This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chinking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER
+This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chinking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER system. 
 ## Introduction
+In many social media sites such as Facebook and Twitter, the language used is pretty noisy and informal. Now, as Twitter consists of data of the past and the tweets keep updating to the present, it is a huge corpus. Hence, we can consider named-entity recogntion, information extracting and text mining over these tweets. It is observed that named entity classification is difficult for 2 reasons 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Tweets contain plethora of disticntive named entity types
+- Due to twitter's 140 character limit, the tweets lack sufficient contest to determine the entity type.
 
 ```markdown
 Syntax highlighted code block
