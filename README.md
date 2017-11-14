@@ -16,6 +16,13 @@ To address these problems, the following contributions were made.
 
 ## Shallow Syntax in Tweets
 
+In this section, 2 fundamental NLP tasks were studied.
+- POS tagging
+- noun-phrase chunking
+
+# Parts of Speech Tagging
+
+In this task, previously it was thought that wach word would be assigned to the most frequent tag and to assign each of the word out of the vocabulary we use the most common POS tag. This method works well in the Brown corpus but it is much weaker on the twttier data because the number of OOV(out of vocabulary) words are way high in
 
 
 
