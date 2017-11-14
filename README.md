@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Named Entity Recognition in Tweets: An Experimental Study
 
 You can use the [editor on GitHub](https://github.com/bhargav265/NLP/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
