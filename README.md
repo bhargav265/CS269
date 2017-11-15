@@ -22,7 +22,36 @@ In this section, 2 fundamental NLP tasks were studied.
 
 # Parts of Speech Tagging
 
-In this task, previously it was thought that wach word would be assigned to the most frequent tag and to assign each of the word out of the vocabulary we use the most common POS tag. This method works well in the Brown corpus but it is much weaker on the twttier data because the number of OOV(out of vocabulary) words are way high in
+In this task, previously it was thought that wach word would be assigned to the most frequent tag and to assign each of the word out of the vocabulary we use the most common POS tag. This method works well in the Brown corpus but it is much weaker on the twttier data because the number of OOV(out of vocabulary) words are way high in the twitter corpus. For example, the word 'n' is used instead if 'in'. One more interesting observation is, the state-of-the-art Stanford POS tagger also performs poorly on the Twitter data. These are due to 2 reasons.
+
+1. Due to unreliable capitalization, common nouns were being classified to proper nouns. Also, interjections and verbs were being classified as nouns. 
+
+2. Grammar of tweets was pretty different from the news text(corpus on which Stanford POS was trained).
+
+To overcome these difficulties, in this paper, 800 tweets were manually annotated from the Penn TreeBank tag set and then used it as training set. Secondly, new tags were added such as retweets, @usernames, #hashtags and urls.  
+
+To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are *put the tomorrow image*. 
+
+Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong dependencies between adjacent POS tags and make highly correlated features. 
+
+By incorporating the above changes, T-POS outperforms the Stanford tagger by reducing the error upto 26%. 
+
+# Shallow Parsing
+
+Shallow parsing is basically the identification of non-recursive phrases such as noun, verb, and prepositional phrases. This would benefit many applications such as Information extraction and Named Entity Recognition. 
+The following steps were followed to achieve Shallow Parsing:
+
+1. Annotate same set of 800 tweets using CoNLL shared task.
+2. Using set of features described by Sha and Pereira (2003) additional to the heirarchical clustering mentioned above.
+3. POS tag features extracted based on output given by T-POS
+4. Finally this Model is known as T-CHUNK.
+
+
+
+
+
+
+
 
 
 
@@ -52,4 +81,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and weâ€™ll help you sort it out.
