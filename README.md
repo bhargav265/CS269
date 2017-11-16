@@ -20,7 +20,7 @@ In this section, 2 fundamental NLP tasks were studied.
 - POS tagging
 - noun-phrase chunking
 
-# Parts of Speech Tagging
+### Parts of Speech Tagging
 
 In this task, previously it was thought that wach word would be assigned to the most frequent tag and to assign each of the word out of the vocabulary we use the most common POS tag. This method works well in the Brown corpus but it is much weaker on the twttier data because the number of OOV(out of vocabulary) words are way high in the twitter corpus. For example, the word 'n' is used instead if 'in'. One more interesting observation is, the state-of-the-art Stanford POS tagger also performs poorly on the Twitter data. These are due to 2 reasons.
 
@@ -36,7 +36,7 @@ Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong d
 
 By incorporating the above changes, T-POS outperforms the Stanford tagger by reducing the error upto 26%. 
 
-# Shallow Parsing
+### Shallow Parsing
 
 Shallow parsing is basically the identification of non-recursive phrases such as noun, verb, and prepositional phrases. This would benefit many applications such as Information extraction and Named Entity Recognition. 
 The following steps were followed to achieve Shallow Parsing:
@@ -50,7 +50,7 @@ The following steps were followed to achieve Shallow Parsing:
 4. Finally this Model is known as T-CHUNK.
 
 
-# Capitalization
+### Capitalization
 
 One of the key feature for recognizing named entities is Capitalization. But in tweets it is very less reliable. This is because, in some tweets capitalization is informative but in some other tweets, non - entity words are capitalized just for emphasis. 
 
