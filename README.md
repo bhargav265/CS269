@@ -42,11 +42,23 @@ Shallow parsing is basically the identification of non-recursive phrases such as
 The following steps were followed to achieve Shallow Parsing:
 
 1. Annotate same set of 800 tweets using CoNLL shared task.
+
 2. Using set of features described by Sha and Pereira (2003) additional to the heirarchical clustering mentioned above.
+
 3. POS tag features extracted based on output given by T-POS
+
 4. Finally this Model is known as T-CHUNK.
 
 
+# Capitalization
+
+One of the key feature for recognizing named entities is Capitalization. But in tweets it is very less reliable. This is because, in some tweets capitalization is informative but in some other tweets, non - entity words are capitalized just for emphasis. 
+
+To overcome this issue, we have to train a model which says is the capitalization is informative or otherwise. Therefore, in this paper a T-CAP model is built which predicts whether or not a tweet is informatively capitalized. Now, this output is used for the Named Entity Recognition as a feature. 
+
+*Plug in results*
+
+## Named Entity Recognition
 
 
 
