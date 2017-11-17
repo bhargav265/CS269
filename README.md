@@ -61,13 +61,58 @@ To overcome this issue, we have to train a model which says is the capitalizatio
 ## Named Entity Recognition
 
 
+Similar to POS tagging and shallow parsing, off the shelf Named Entity Recognition perform poorly on tweets. For example 
+*Put the stanford example(Yess)*
+
+We can observe the "Yess" is mistankenly classified to a named entity. Secondly, "North America" should be classified as Location, but not just "America". 
+
+In this paper, classification and segmentation are treated as saperate tasks. Adding to this, larger annotated dataset was take with a randomly sampled set 2,400 tweets for Named Entity Recognition. 
+
+### Segmenting Named Entities
+
+As stated previously, Capitalization in twitter is less informative and hence the models should rely less heavily on this aspect and features were used from T-CAP. 
+
+T-SEG is the method proposed for SNE. IOB encoding is used for representing segmentations and after that it uses, CRFs for learning. Orthographic, contextual and dictionary features were collected from Freebase. Additionally, Brown clusters and ouptuts of T-POS, T-CHUNK and T_CAP were used.
 
 
+### Classifying Named Entities
 
 
+Twitter has many in frequent entity types and therefore gathering sufficient training data is a difficult task.  Additionally, the context to determine the named entity is not sufficient. Eg : 
+
+KKTNY in 45min......
+
+It is impossible to determine the entity os KKTNY without any prior knowledge. 
+
+To handle this problem, Freebase open domain ontology was used which has large list of entities and types as distant supervision. 
+
+#### Freebase Baseline
+
+Even though Freebase has a large coverage, it is inadequate to classsify named entities in context. For Eg, "China" could refer to a country, a band, a person or a film. This is observed because 35% of the data occurs in mutually exclusive freebase dictionaries. 
+
+#### Distant Supervision with Topic Models
+
+For modelling entities and types, LabeledLDA was applied. This models each entity as a mixture of types rather than using a single hidden variable to represent type of each mention. This would information about an entity's distribution over different types and naturally handling ambiguous entity strings whose mention could refer to multiple types.
+
+Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial (\theta{e})  and each topic is associated with a distribution over words Multinomial (\beta{t}). Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. 
+
+`
+for each type: t = 1 : T do
+	Generate \beta{t} according to symmetric Dirichlet
+	distribution Dir(\eta).
+end for
+for each entity string e = 1 : |E| do
+	Generate \theta{e} over FB[e] according to Dirichlet
+	distribution Dir(\alpha{FB[e]}).
+	for each word position i = 1 : N{e} do
+		Generate z{e,i} from Mult(\theta{e}).
+		Generate the word w{e,i} from Mult(\beta{z{e,i}}).
+	end for
+end for
 
 
-```markdown
+`
+
 Syntax highlighted code block
 
 # Header 1
