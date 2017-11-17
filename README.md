@@ -96,7 +96,7 @@ For modelling entities and types, LabeledLDA was applied. This models each entit
 
 Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial (\theta{e})  and each topic is associated with a distribution over words Multinomial (\beta{t}). Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. 
 
-`
+```
 for each type: t = 1 : T do
 	Generate \beta{t} according to symmetric Dirichlet
 	distribution Dir(\eta).
@@ -110,8 +110,9 @@ for each entity string e = 1 : |E| do
 	end for
 end for
 
+<b>tag</b>
 
-`
+```
 
 Syntax highlighted code block
 
