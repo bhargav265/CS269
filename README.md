@@ -9,6 +9,8 @@ In many social media sites such as Facebook and Twitter, the language used is pr
 - Tweets contain plethora of disticntive named entity types
 - Due to twitter's 140 character limit, the tweets lack sufficient contest to determine the entity type.
 
+![Table1](Table1.PNG)
+
 To address these problems, the following contributions were made. 
 
 1. By utilizing in-domain, outof-domain, and unlabeled data, it was able to substantially boost performance.
