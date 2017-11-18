@@ -151,5 +151,5 @@ tools were builtwhich were trained on unlabeled, in-domain and outof-domain data
 
 5. To overcome the above problem, a distantly supervised approach based on LabeledLDA was chosen which led to increase in F1 Score. 
 
-[Code can be seen here for POStagger](github.com/aritter/twitter_nlp)
+[Code can be seen here for POStagger](https://github.com/aritter/twitter_nlp)
 
