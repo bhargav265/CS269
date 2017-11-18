@@ -86,11 +86,11 @@ It is impossible to determine the entity os KKTNY without any prior knowledge.
 
 To handle this problem, Freebase open domain ontology was used which has large list of entities and types as distant supervision. 
 
-#### Freebase Baseline
+##### Freebase Baseline
 
 Even though Freebase has a large coverage, it is inadequate to classsify named entities in context. For Eg, "China" could refer to a country, a band, a person or a film. This is observed because 35% of the data occurs in mutually exclusive freebase dictionaries. 
 
-#### Distant Supervision with Topic Models
+##### Distant Supervision with Topic Models
 
 For modelling entities and types, LabeledLDA was applied. This models each entity as a mixture of types rather than using a single hidden variable to represent type of each mention. This would information about an entity's distribution over different types and naturally handling ambiguous entity strings whose mention could refer to multiple types.
 
@@ -110,33 +110,46 @@ for each entity string e = 1 : |E| do
 	end for
 end for
 
-<b>tag</b>
-
 ```
 
-Syntax highlighted code block
+For entities which were not encountered during training, a prior was used based on the distribution of types across all entities.  
 
-# Header 1
-## Header 2
-### Header 3
+#### Classification Experiments
 
-- Bulleted
-- List
+To evaluate T-CLASS, 2400 tweets were manually annotated with  10 types which are both popular on Twitter and have good coverage in Freebase. **Person, Geo-Location, Company, Product, Facility, TV-show, Movie, Sportsteam, Band, and Other**. These are only used for testing but not training T-CLASS which is completely dependent on Distant Supervision.
 
-1. Numbered
-2. List
+##### Training
 
-**Bold** and _Italic_ and `Code` text
+1. For gathering unlabeled data, T-SEG(entity segmenter) was used.
 
-[Link](url) and ![Image](src)
-```
+2. For each entity string, words occuring in a context window of 3 words from all mentions in the data were collected.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+3. Gibbs sampling for 1000 iterations was run, using the last sample to estimate entity tyoe distributions, in addition to word type disgtributions. 
 
-## Shallow Syntax in tweets 
+4. The below table shows 20 entities not found in free base, whose probability distribution assigns the highest probability to the selected types.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bhargav265/NLP/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+##### Results
 
-### Support or Contact
+1. Below table presents classification results of T-CLASS compared against many other models.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and weâ€™ll help you sort it out.
+2. Below tables present break down of F1 scores by type.
+
+##### End to end system
+
+Below table presents the end to end performance on segmentation and classification.
+
+## Conclusion
+
+1. Existing tools for POS tagging, Chunking and named Entity Recogniton were demonstrated that they perform poorly on tweet data.
+
+2. To address this challenge, tweets have been annotated and
+tools were builtwhich were trained on unlabeled, in-domain and outof-domain data.
+
+3. Benefits of of features generated from T-POS and T-CHUNK were shown.
+
+4. Named entity classification is a challenging task on twitter data because of their terse nature, lacking context, lots of types of entities which require large training data. 
+
+5. To overcome the above problem, a distantly supervised approach based on LabeledLDA was chosen which led to increase in F1 Score. 
+
+[Code can be seen here for POStagger](github.com/aritter/twitter_nlp)
+
