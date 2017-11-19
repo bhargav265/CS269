@@ -2,7 +2,7 @@
 
 Tweets are generally noisy and informal and hence the standard NLP tools is severely degraded on these tweets. 
 
-This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chinking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER system. 
+This paper addresses this issue by rebuilding the NLP pipeline with POS tagging, chunking and named-entity recognition. In this paper, a new T-NER system which is compared with the Stanford NER system and is found out to give double the F1 score than that of Stanford NER system. 
 ## Introduction
 In many social media sites such as Facebook and Twitter, the language used is pretty noisy and informal. Now, as Twitter consists of data of the past and the tweets keep updating to the present, it is a huge corpus. Hence, we can consider named-entity recogntion, information extracting and text mining over these tweets. It is observed that named entity classification is difficult for 2 reasons 
 
@@ -112,19 +112,19 @@ Even though Freebase has a large coverage, it is inadequate to classsify named e
 
 For modelling entities and types, LabeledLDA was applied. This models each entity as a mixture of types rather than using a single hidden variable to represent type of each mention. This would information about an entity's distribution over different types and naturally handling ambiguous entity strings whose mention could refer to multiple types.
 
-Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial (\theta{e})  and each topic is associated with a distribution over words Multinomial (\beta{t}). Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. 
+Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial \theta_{e}  and each topic is associated with a distribution over words Multinomial \beta_{t}. Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. 
 
 ```
 for each type: t = 1 : T do
-	Generate \beta{t} according to symmetric Dirichlet
+	Generate \beta_{t} according to symmetric Dirichlet
 	distribution Dir(\eta).
 end for
 for each entity string e = 1 : |E| do
-	Generate \theta{e} over FB[e] according to Dirichlet
-	distribution Dir(\alpha{FB[e]}).
-	for each word position i = 1 : N{e} do
-		Generate z{e,i} from Mult(\theta{e}).
-		Generate the word w{e,i} from Mult(\beta{z{e,i}}).
+	Generate \theta_{e} over FB[e] according to Dirichlet
+	distribution Dir(\alpha_{FB[e]}).
+	for each word position i = 1 : N_{e} do
+		Generate z_{e,i} from Mult(\theta_{e}).
+		Generate the word w_{e,i} from Mult(\beta_{z_{e,i}}).
 	end for
 end for
 
