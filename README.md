@@ -32,7 +32,9 @@ In this task, previously it was thought that wach word would be assigned to the 
 
 To overcome these difficulties, in this paper, 800 tweets were manually annotated from the Penn TreeBank tag set and then used it as training set. Secondly, new tags were added such as retweets, @usernames, #hashtags and urls.  
 
-To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are *put the tomorrow image*. 
+To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are shown below. 
+
+![Tommorow](Tomorrow.PNG)
 
 Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong dependencies between adjacent POS tags and make highly correlated features. 
 
@@ -53,6 +55,10 @@ The following steps were followed to achieve Shallow Parsing:
 
 4. Finally this Model is known as T-CHUNK.
 
+The below table reports T-CHUNK's performance at shallow parsing of tweets and it obtained a 22% reduction in error.
+
+![Table4](Table4.PNG)
+
 
 ### Capitalization
 
@@ -60,7 +66,9 @@ One of the key feature for recognizing named entities is Capitalization. But in 
 
 To overcome this issue, we have to train a model which says is the capitalization is informative or otherwise. Therefore, in this paper a T-CAP model is built which predicts whether or not a tweet is informatively capitalized. Now, this output is used for the Named Entity Recognition as a feature. 
 
-*Plug in results*
+When compared with majority baseline, it was shown that capitalization was always informative.
+
+<img src="Table5.PNG" width="500" align="middle">
 
 ## Named Entity Recognition
 
