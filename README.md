@@ -38,7 +38,10 @@ To address the OOV issue, hierarchical clustering was performed to group words w
 Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong dependencies between adjacent POS tags and make highly correlated features. 
 
 By incorporating the above changes, T-POS outperforms the Stanford tagger by reducing the error upto 26%. 
+
 The below table compares the performance of T-POS by different in domain data and other POS taggers.
+
+
 <img src="Table2.PNG" width="500" align="middle">
 
 ### Shallow Parsing
