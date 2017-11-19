@@ -33,7 +33,7 @@ In this task, previously it was thought that wach word would be assigned to the 
 To overcome these difficulties, in this paper, 800 tweets were manually annotated from the Penn TreeBank tag set and then used it as training set. Secondly, new tags were added such as retweets, @usernames, #hashtags and urls.  
 
 To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are shown below. 
-<img src="Tomorrow.PNG" width="500" align="middle">
+<img src="Tomorrow.PNG" height = "300" width="300" align="middle">
 
 Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong dependencies between adjacent POS tags and make highly correlated features. 
 
