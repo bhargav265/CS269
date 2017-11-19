@@ -73,7 +73,8 @@ When compared with majority baseline, it was shown that capitalization was alway
 
 
 Similar to POS tagging and shallow parsing, off the shelf Named Entity Recognition perform poorly on tweets. For example 
-*Put the stanford example(Yess)*
+
+<img src="StanfordYess.PNG" width="500" align="middle">
 
 We can observe the "Yess" is mistankenly classified to a named entity. Secondly, "North America" should be classified as Location, but not just "America". 
 
@@ -85,6 +86,9 @@ As stated previously, Capitalization in twitter is less informative and hence th
 
 T-SEG is the method proposed for SNE. IOB encoding is used for representing segmentations and after that it uses, CRFs for learning. Orthographic, contextual and dictionary features were collected from Freebase. Additionally, Brown clusters and ouptuts of T-POS, T-CHUNK and T_CAP were used.
 
+The below table shows the performance of segementing entities for randomly sampled 2400 tweets and a 4 fold cross validation.
+
+<img src="Table6.PNG" width="500" align="middle">
 
 ### Classifying Named Entities
 
@@ -139,16 +143,27 @@ To evaluate T-CLASS, 2400 tweets were manually annotated with  10 types which ar
 
 4. The below table shows 20 entities not found in free base, whose probability distribution assigns the highest probability to the selected types.
 
+The below table the 20 entities which are not found in freebase and whose posterior distribution assigns higest probability to selected types. 
+
+<img src="Table7.PNG" width="500" align="middle">
+
 ##### Results
 
-1. Below table presents classification results of T-CLASS compared against many other models.
+Below table presents classification results of T-CLASS compared against many other models.
+<img src="Table8.PNG" width="500" align="middle">
 
-2. Below tables present break down of F1 scores by type.
+Below tables present break down of F1 scores by type.
+
+<img src="Table9.PNG" width="500" align="middle">
+
+
+<img src="Table10.PNG" width="500" align="middle">
+
 
 ##### End to end system
 
 Below table presents the end to end performance on segmentation and classification.
-
+<img src="Table12.PNG" width="500" align="middle">
 ## Conclusion
 
 1. Existing tools for POS tagging, Chunking and named Entity Recogniton were demonstrated that they perform poorly on tweet data.
