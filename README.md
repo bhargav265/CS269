@@ -9,7 +9,7 @@ In many social media sites such as Facebook and Twitter, the language used is pr
 - Tweets contain plethora of disticntive named entity types
 - Due to twitter's 140 character limit, the tweets lack sufficient contest to determine the entity type.
 
-![Table1](Table1.PNG)
+<img src="Table1.PNG" width="500" align="middle">
 
 To address these problems, the following contributions were made. 
 
@@ -33,14 +33,13 @@ In this task, previously it was thought that wach word would be assigned to the 
 To overcome these difficulties, in this paper, 800 tweets were manually annotated from the Penn TreeBank tag set and then used it as training set. Secondly, new tags were added such as retweets, @usernames, #hashtags and urls.  
 
 To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are shown below. 
-
-![Tommorow](Tomorrow.PNG)
+<img src="Tomorrow.PNG" width="500" align="middle">
 
 Next, T-POS (proposed POS algorithm ) uses CRF's because they can model strong dependencies between adjacent POS tags and make highly correlated features. 
 
 By incorporating the above changes, T-POS outperforms the Stanford tagger by reducing the error upto 26%. 
 The below table compares the performance of T-POS by different in domain data and other POS taggers.
-![Table2](Table2.PNG)
+<img src="Table2.PNG" width="500" align="middle">
 
 ### Shallow Parsing
 
@@ -57,7 +56,7 @@ The following steps were followed to achieve Shallow Parsing:
 
 The below table reports T-CHUNK's performance at shallow parsing of tweets and it obtained a 22% reduction in error.
 
-![Table4](Table4.PNG)
+<img src="Table4.PNG" width="500" align="middle">
 
 
 ### Capitalization
