@@ -86,7 +86,8 @@ To overcome this issue, we have to train a model which says is the capitalizatio
 When compared with majority baseline, it was shown that capitalization was always informative.
 
 <img src="Table5.PNG" width="500" align="middle">
-
+<center><b>Table 5: Performance at predicting reliable capitalization.</b></center>
+<br>
 ## Named Entity Recognition
 
 
