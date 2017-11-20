@@ -72,7 +72,7 @@ The following steps were followed to achieve Shallow Parsing:
 The below table reports T-CHUNK's performance at shallow parsing of tweets and it obtained a 22% reduction in error.
 
 <img src="Table4.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 4: Token-Level accuracy at shallow parsing tweets.
+<center><b>Table 3: Token-Level accuracy at shallow parsing tweets.
 We compare against the OpenNLP chunker as a baseline.</b></center>
 <br>
 
@@ -87,7 +87,7 @@ To overcome this issue, we have to train a model which says is the capitalizatio
 When compared with majority baseline, it was shown that capitalization was always informative.
 
 <img src="Table5.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 5: Performance at predicting reliable capitalization.</b></center>
+<center><b>Table 4: Performance at predicting reliable capitalization.</b></center>
 <br>
 ## Named Entity Recognition
 
@@ -109,7 +109,7 @@ T-SEG is the method proposed for SNE. IOB encoding is used for representing segm
 The below table shows the performance of segementing entities for randomly sampled 2400 tweets and a 4 fold cross validation.
 
 <img src="Table6.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 6: Performance at segmenting entities varying the
+<center><b>Table 5: Performance at segmenting entities varying the
 features used. “None” removes POS, Chunk, and capitalization
 features. Overall we obtain a 52% improvement
 in F1 score over the Stanford Named Entity Recognizer.</b></center>
@@ -160,7 +160,7 @@ To evaluate T-CLASS, 2400 tweets were manually annotated with  10 types which ar
 The below table the 20 entities which are not found in freebase and whose posterior distribution assigns higest probability to selected types. 
 
 <img src="Table7.PNG" width="2000" align="middle">{: .center-image }
-<center><b>Table 7: Example type lists produced by LabeledLDA. No entities which are shown were found in Freebase; these are
+<center><b>Table 6: Example type lists produced by LabeledLDA. No entities which are shown were found in Freebase; these are
 typically either too new to have been added, or are misspelled/abbreviated (for example rhobh=”Real Housewives of
 Beverly Hills”). In a few cases there are segmentation errors.</b></center>
 <br>
@@ -171,14 +171,14 @@ Below table presents classification results of T-CLASS compared against many oth
 
 
 <img src="Table8.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 8: Named Entity Classification performance on the
+<center><b>Table 7: Named Entity Classification performance on the
 10 types. Assumes segmentation is given as in (Collins
 and Singer, 1999), and (Elsner et al., 2009).</b></center>
 <br>
 Below tables present break down of F1 scores by type.
 
 <img src="Table9.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 9: F1 classification scores for the 3 MUC types
+<center><b>Table 8: F1 classification scores for the 3 MUC types
 PERSON, LOCATION, ORGANIZATION. Results are
 shown using LabeledLDA (LL), Freebase Baseline (FB),
 DL-Cotrain (CT) and Supervised Baseline (SP). N is the
@@ -186,7 +186,7 @@ number of entities in the test set.</b></center>
 <br>
 
 <img src="Table10.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 10: F1 scores for classification broken down by
+<center><b>Table 9: F1 scores for classification broken down by
 type for LabeledLDA (LL), Freebase Baseline (FB), DLCotrain
 (CT) and Supervised Baseline (SP). N is the number
 of entities in the test set.</b></center>
@@ -196,7 +196,7 @@ of entities in the test set.</b></center>
 
 Below table presents the end to end performance on segmentation and classification.
 <img src="Table12.PNG" width="500" align="middle">{: .center-image }
-<center><b>Table 12: Performance at predicting both segmentation
+<center><b>Table 10: Performance at predicting both segmentation
 and classification. Systems labeled with PLO are evaluated
 on the 3 MUC types PERSON, LOCATION, ORGANIZATION.</b></center>
 <br>
