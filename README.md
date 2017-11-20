@@ -1,5 +1,5 @@
 <style>
-{% blogposts.css %}
+{% include blogposts.css %}
 </style>
 # Named Entity Recognition in Tweets: An Experimental Study
 
