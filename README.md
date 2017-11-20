@@ -1,3 +1,6 @@
+<style>
+{% include blogposts.css %}
+</style>
 # Named Entity Recognition in Tweets: An Experimental Study
 
 Tweets are generally noisy and informal and hence the standard NLP tools is severely degraded on these tweets. 
@@ -9,7 +12,7 @@ In many social media sites such as Facebook and Twitter, the language used is pr
 - Tweets contain plethora of disticntive named entity types
 - Due to twitter's 140 character limit, the tweets lack sufficient contest to determine the entity type.
 
-<img src="Table1.PNG" width="500" align="middle">
+<img src="Table1.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 1: Examples of noisy text in tweets.</b></center>
 <br>
 
