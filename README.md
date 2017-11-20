@@ -132,23 +132,9 @@ Even though Freebase has a large coverage, it is inadequate to classsify named e
 
 For modelling entities and types, LabeledLDA was applied. This models each entity as a mixture of types rather than using a single hidden variable to represent type of each mention. This would information about an entity's distribution over different types and naturally handling ambiguous entity strings whose mention could refer to multiple types.
 
-Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial \theta_{e}  and each topic is associated with a distribution over words Multinomial \beta_{t}. Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. 
+Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial _Te_  and each topic is associated with a distribution over words Multinomial _Bt_. Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. In detail, the model for Named entity classsification is as follows:
 
-```
-for each type: t = 1 : T do
-	Generate \beta_{t} according to symmetric Dirichlet
-	distribution Dir(\eta).
-end for
-for each entity string e = 1 : |E| do
-	Generate \theta_{e} over FB[e] according to Dirichlet
-	distribution Dir(\alpha_{FB[e]}).
-	for each word position i = 1 : N_{e} do
-		Generate z_{e,i} from Mult(\theta_{e}).
-		Generate the word w_{e,i} from Mult(\beta_{z_{e,i}}).
-	end for
-end for
 
-```
 
 For entities which were not encountered during training, a prior was used based on the distribution of types across all entities.  
 
