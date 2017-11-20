@@ -38,7 +38,7 @@ In this task, previously it was thought that wach word would be assigned to the 
 To overcome these difficulties, in this paper, 800 tweets were manually annotated from the Penn TreeBank tag set and then used it as training set. Secondly, new tags were added such as retweets, @usernames, #hashtags and urls.  
 
 To address the OOV issue, hierarchical clustering was performed to group words which are distributionally similar. Each word is uniquey represented by a bit string based on the path from the root of the resulting hierarchy to the word's leaf. For example, the following lexical variations on the word "tomorrow" from one cluster are shown below. 
-<img src="Tomorrow.PNG" height = "300" width="300" align="middle">
+<img src="Tomorrow.PNG" height = "300" width="300" align="middle">{: .center-image }
 <center><b>Fig 1: Cluster of words similar to "tomorrow".</b></center>
 <br>
 
@@ -49,7 +49,7 @@ By incorporating the above changes, T-POS outperforms the Stanford tagger by red
 The below table compares the performance of T-POS by different in domain data.
 
 
-<img src="Table2.PNG" width="500" align="middle">
+<img src="Table2.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 2: POS tagging performance on tweets. By training
 on in-domain labeled data, in addition to annotated IRC
 chat data, we obtain a 41% reduction in error over the
@@ -71,7 +71,7 @@ The following steps were followed to achieve Shallow Parsing:
 
 The below table reports T-CHUNK's performance at shallow parsing of tweets and it obtained a 22% reduction in error.
 
-<img src="Table4.PNG" width="500" align="middle">
+<img src="Table4.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 4: Token-Level accuracy at shallow parsing tweets.
 We compare against the OpenNLP chunker as a baseline.</b></center>
 <br>
@@ -86,7 +86,7 @@ To overcome this issue, we have to train a model which says is the capitalizatio
 
 When compared with majority baseline, it was shown that capitalization was always informative.
 
-<img src="Table5.PNG" width="500" align="middle">
+<img src="Table5.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 5: Performance at predicting reliable capitalization.</b></center>
 <br>
 ## Named Entity Recognition
@@ -94,7 +94,7 @@ When compared with majority baseline, it was shown that capitalization was alway
 
 Similar to POS tagging and shallow parsing, off the shelf Named Entity Recognition perform poorly on tweets. For example 
 
-<img src="StanfordYess.PNG" width="500" align="middle">
+<img src="StanfordYess.PNG" width="500" align="middle">{: .center-image }
 
 We can observe the "Yess" is mistankenly classified to a named entity. Secondly, "North America" should be classified as Location, but not just "America". 
 
@@ -108,7 +108,7 @@ T-SEG is the method proposed for SNE. IOB encoding is used for representing segm
 
 The below table shows the performance of segementing entities for randomly sampled 2400 tweets and a 4 fold cross validation.
 
-<img src="Table6.PNG" width="500" align="middle">
+<img src="Table6.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 6: Performance at segmenting entities varying the
 features used. “None” removes POS, Chunk, and capitalization
 features. Overall we obtain a 52% improvement
@@ -137,7 +137,7 @@ For modelling entities and types, LabeledLDA was applied. This models each entit
 
 Each entity is associated with a list of words.  In Standard LDA, is associated with a distribution over topics,  Multinomial _Te_  and each topic is associated with a distribution over words Multinomial _Bt_. Additionally there is a one-to-one mapping between topics and Freebase type dictionaries. In detail, the model for Named entity classification is as follows:
 
-<img src="Algo.PNG" width="500" align="middle">
+<img src="Algo.PNG" width="500" align="middle">{: .center-image }
 <center><b>Fig 2: Model for Named entity classification.</b></center>
 <br>
 
@@ -159,7 +159,7 @@ To evaluate T-CLASS, 2400 tweets were manually annotated with  10 types which ar
 
 The below table the 20 entities which are not found in freebase and whose posterior distribution assigns higest probability to selected types. 
 
-<img src="Table7.PNG" width="2000" align="middle">
+<img src="Table7.PNG" width="2000" align="middle">{: .center-image }
 <center><b>Table 7: Example type lists produced by LabeledLDA. No entities which are shown were found in Freebase; these are
 typically either too new to have been added, or are misspelled/abbreviated (for example rhobh=”Real Housewives of
 Beverly Hills”). In a few cases there are segmentation errors.</b></center>
@@ -170,14 +170,14 @@ Beverly Hills”). In a few cases there are segmentation errors.</b></center>
 Below table presents classification results of T-CLASS compared against many other models.
 
 
-<img src="Table8.PNG" width="500" align="middle">
+<img src="Table8.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 8: Named Entity Classification performance on the
 10 types. Assumes segmentation is given as in (Collins
 and Singer, 1999), and (Elsner et al., 2009).</b></center>
 <br>
 Below tables present break down of F1 scores by type.
 
-<img src="Table9.PNG" width="500" align="middle">
+<img src="Table9.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 9: F1 classification scores for the 3 MUC types
 PERSON, LOCATION, ORGANIZATION. Results are
 shown using LabeledLDA (LL), Freebase Baseline (FB),
@@ -185,7 +185,7 @@ DL-Cotrain (CT) and Supervised Baseline (SP). N is the
 number of entities in the test set.</b></center>
 <br>
 
-<img src="Table10.PNG" width="500" align="middle">
+<img src="Table10.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 10: F1 scores for classification broken down by
 type for LabeledLDA (LL), Freebase Baseline (FB), DLCotrain
 (CT) and Supervised Baseline (SP). N is the number
@@ -195,7 +195,7 @@ of entities in the test set.</b></center>
 ##### End to end system
 
 Below table presents the end to end performance on segmentation and classification.
-<img src="Table12.PNG" width="500" align="middle">
+<img src="Table12.PNG" width="500" align="middle">{: .center-image }
 <center><b>Table 12: Performance at predicting both segmentation
 and classification. Systems labeled with PLO are evaluated
 on the 3 MUC types PERSON, LOCATION, ORGANIZATION.</b></center>
