@@ -168,7 +168,7 @@ To evaluate T-CLASS, 2400 tweets were manually annotated with  10 types which ar
 
 The below table the 20 entities which are not found in freebase and whose posterior distribution assigns higest probability to selected types. 
 
-<img src="Table7.PNG" width="2000" height = "1000" align="middle">
+<img src="Table7.PNG" width="2000" align="middle">
 <center><b>Table 7: Example type lists produced by LabeledLDA. No entities which are shown were found in Freebase; these are
 typically either too new to have been added, or are misspelled/abbreviated (for example rhobh=”Real Housewives of
 Beverly Hills”). In a few cases there are segmentation errors.</b></center>
